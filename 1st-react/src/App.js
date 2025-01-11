@@ -1,12 +1,20 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import { Switch, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
 function App() {
   return (
-    <div className="App">
-      <h1 className={styles.title}>Welcome Back!</h1>
-      <Button text={"continue"} />
-    </div>
+    <Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route path="/movie">
+        <Detail />
+      </Route>
+    </Switch>
   );
 }
 
 export default App;
+
+// https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year
